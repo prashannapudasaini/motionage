@@ -2,17 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- ✅ Logo as favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MotionAge IT Solutions</title>
-    
+
+    <!-- ✅ SEO Meta -->
+    <meta name="description" content="MotionAge IT Solutions - Innovative IT services, web development, and digital solutions." />
+
+    <!-- ✅ Open Graph (for social sharing) -->
+    <meta property="og:title" content="MotionAge IT Solutions" />
+    <meta property="og:description" content="Innovative IT services and digital solutions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://yourdomain.com/logo.png" />
+    <meta property="og:url" content="https://yourdomain.com" />
+
+    <!-- ✅ Google Structured Data (IMPORTANT for logo in search) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MotionAge IT Solutions",
+        "url": "https://yourdomain.com",
+        "logo": "https://yourdomain.com/logo.png"
+      }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
   </head>
+
   <body>
     <div id="root"></div>
-    
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

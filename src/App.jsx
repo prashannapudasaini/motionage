@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async'; // NEW: Required for SEO component
+
+// Global Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ClickParticles from './components/ClickParticles'; 
@@ -30,32 +33,39 @@ export default function App() {
   }, [isDark]);
 
   return (
-    <Router>
-      {/* GLOBAL MICRO-INTERACTIONS */}
-      <CustomCursor /> 
-      <ClickParticles /> 
-      
-      <div className="relative min-h-screen font-sans antialiased selection:bg-blue-500/30 selection:text-blue-600 dark:selection:text-blue-200 bg-slate-50 dark:bg-[#0a0f1c]">
+    // HelmetProvider wraps the app to manage <head> tags for SEO
+    <HelmetProvider>
+      <Router>
+        {/* GLOBAL MICRO-INTERACTIONS */}
+        <CustomCursor /> 
+        <ClickParticles /> 
         
-        <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
-        
-        {/* Main Content Area */}
-        <main className="pt-24">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<ServicesPage />} /> 
-            <Route path="/services/:serviceId" element={<ServiceDetail />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/vacancy" element={<VacancyPage />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Routes>
-        </main>
+        {/* Main App Container */}
+        <div className="relative min-h-screen font-sans antialiased selection:bg-blue-500/30 selection:text-blue-600 dark:selection:text-blue-200 bg-slate-50 dark:bg-[#050814]">
+          
+          <Navbar isDark={isDark} toggleTheme={() => setIsDark(!isDark)} />
+          
+          {/* Main Content Area */}
+          <main className="pt-24 flex-grow">
+            <Routes>
+              {/* Public Routes */}
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} /> 
+              <Route path="/services/:serviceId" element={<ServiceDetail />} />
+              <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/vacancy" element={<VacancyPage />} />
+              
+              {/* Admin / Private Routes */}
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/admin" element={<AdminDashboard />} />
+            </Routes>
+          </main>
 
-        <Footer />
-      </div>
-    </Router>
+          <Footer />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
