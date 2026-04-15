@@ -117,18 +117,18 @@ export default function Home() {
 
   const projects = [
     {
-      title: "SVLC Law Firm",
-      category: "Web Application",
-      impact: "Streamlined legal consultations with a secure, professional portal.",
+      title: "7eleveneduconsultancy",
+      category: "Web Application/Logo Design",
+      impact: " secure, professional portal",
       tech: ["React", "Node.js", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+      image: "https://th.bing.com/th/id/OIP.Ii7TU9Cx2jmy9hSmwWOxPgHaHa?w=174&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
     },
     {
-      title: "Next Stop Nepal",
-      category: "Digital Platform",
-      impact: "Boosted tourism engagement by 45% through immersive UI/UX.",
+      title: "Goleybusinessconsultant",
+      category: "WebApplication/Logo Design",
+      impact: "immersive UI/UX 100% client satisfiction ",
       tech: ["Next.js", "Framer Motion", "AWS"],
-      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=1200&q=80"
+      image: "https://th.bing.com/th/id/OIP._bRJvsFZId9qh-A7T9xWwQHaHa?w=179&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
     }
   ];
 
