@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Important for internal routing
+import { Link } from 'react-router-dom';
 import { MapPin, Phone, ChevronRight, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+
+// Import your logo
+import logo from '../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -12,7 +15,8 @@ export default function Footer() {
           
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-3xl font-black text-white">M<span className="text-blue-500">A.</span></span>
+              {/* Logo replaced the MA text */}
+              <img src={logo} alt="MotionAge Logo" className="h-12 w-auto" />
             </div>
             <p className="text-slate-500 mb-6 leading-relaxed text-sm">
               MotionAge transforms complex ideas into high-impact visual stories. Specializing in branding, social media, and digital design.

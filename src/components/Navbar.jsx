@@ -55,8 +55,10 @@ export default function Navbar({ isDark, toggleTheme }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           
           <Link to="/" className="flex-shrink-0 flex items-center gap-3">
-            <img src={logo} alt="MotionAge Logo" className="h-10 w-auto" />
-            <span className="text-2xl font-black tracking-tight text-slate-900 dark:text-white hidden sm:block">
+            {/* Logo image size increased slightly */}
+            <img src={logo} alt="MotionAge Logo" className="h-12 md:h-14 w-auto transition-all duration-300" />
+            {/* Logo text made thinner (font-bold) and smaller (text-xl) */}
+            <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white hidden sm:block">
               Motion<span className="text-blue-600 dark:text-blue-500">Age.</span>
             </span>
           </Link>

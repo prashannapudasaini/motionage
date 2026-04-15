@@ -117,18 +117,18 @@ export default function Home() {
 
   const projects = [
     {
-      title: "SVLC Law Firm",
-      category: "Web Application",
-      impact: "Streamlined legal consultations with a secure, professional portal.",
+      title: "7eleveneduconsultancy",
+      category: "Web Application/Logo Design",
+      impact: " secure, professional portal",
       tech: ["React", "Node.js", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+      image: "https://th.bing.com/th/id/OIP.Ii7TU9Cx2jmy9hSmwWOxPgHaHa?w=174&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
     },
     {
-      title: "Next Stop Nepal",
-      category: "Digital Platform",
-      impact: "Boosted tourism engagement by 45% through immersive UI/UX.",
+      title: "Goleybusinessconsultant",
+      category: "WebApplication/Logo Design",
+      impact: "immersive UI/UX 100% client satisfiction ",
       tech: ["Next.js", "Framer Motion", "AWS"],
-      image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&w=1200&q=80"
+      image: "https://th.bing.com/th/id/OIP._bRJvsFZId9qh-A7T9xWwQHaHa?w=179&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
     }
   ];
 
@@ -448,19 +448,51 @@ export default function Home() {
 
       {/* 10. ENTERPRISE CTA */}
       <section className="relative py-24 md:py-32 px-4 overflow-hidden bg-[#050814]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-700/30 to-transparent pointer-events-none"></div>
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <motion.h2 initial="hidden" whileInView="show" viewport={{ once: true }} variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl font-black text-slate-100 mb-6 md:mb-8 leading-[1.05] tracking-tight">
-            Ready to dominate your <br className="hidden md:block"/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">digital landscape?</span>
-          </motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="text-lg md:text-xl text-slate-400 font-light mb-10 md:mb-12 max-w-2xl mx-auto">
-            Partner with MotionAge to architect, scale, and innovate.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.6 }}>
-            <MagneticButton onClick="/contact" className="group relative inline-flex items-center justify-center gap-3 md:gap-4 px-8 md:px-10 py-4 md:py-5 w-full sm:w-auto rounded-full bg-slate-100 text-[#050814] font-black text-base md:text-lg overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_rgba(255,255,255,0.1)]">
-              <span className="relative z-10">Initiate Project</span> 
-              <ArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform" />
-            </MagneticButton>
+        {/* Dynamic Abstract Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] bg-blue-600/20 blur-[150px] rounded-full pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div 
+            initial="hidden" 
+            whileInView="show" 
+            viewport={{ once: true, margin: "-50px" }} 
+            variants={fadeUp}
+            className="relative p-10 md:p-20 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl text-center"
+          >
+            {/* Internal Card Glows */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-purple-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-blue-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+            <div className="relative z-10 max-w-4xl mx-auto">
+              {/* Animated Status Badge */}
+              <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md mb-8 shadow-2xl">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-blue-400">
+                  Accepting New Projects
+                </span>
+              </motion.div>
+
+              <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#cad1d9] mb-6 md:mb-8 leading-[1.05] tracking-tight">
+                Ready to dominate your <br className="hidden md:block"/> 
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">digital landscape?</span>
+              </motion.h2>
+              
+              <motion.p variants={fadeUp} className="text-lg md:text-xl text-slate-400 font-light mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
+                Partner with MotionAge to architect, scale, and innovate. Join the industry leaders who trust us with their digital ecosystems.
+              </motion.p>
+              
+              <motion.div variants={fadeUp}>
+                <MagneticButton onClick="/contact" className="group relative inline-flex items-center justify-center gap-3 md:gap-4 px-8 md:px-10 py-4 md:py-5 w-full sm:w-auto rounded-full bg-blue-600 text-white font-bold text-base md:text-lg overflow-hidden transition-all hover:scale-105 shadow-[0_0_40px_rgba(59,130,246,0.4)]">
+                  <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Initiate Project</span> 
+                  <ArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform" />
+                </MagneticButton>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
