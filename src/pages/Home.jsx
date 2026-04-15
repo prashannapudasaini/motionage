@@ -121,7 +121,7 @@ export default function Home() {
       category: "Web Application/Logo Design",
       impact: " secure, professional portal",
       tech: ["React", "Node.js", "Tailwind CSS"],
-      image: "https://th.bing.com/th/id/OIP.Ii7TU9Cx2jmy9hSmwWOxPgHaHa?w=174&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfHg3TJ-tKIX_ehDTXZ08P9pCwtp-grBh-Q&s"
     },
     {
       title: "Goleybusinessconsultant",
