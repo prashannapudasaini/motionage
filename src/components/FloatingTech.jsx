@@ -1,47 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function FloatingTech() {
-  const [elements, setElements] = useState([]);
-
-  useEffect(() => {
-    // Generate 15 random floating tech elements on mount
-    const generatedElements = [...Array(15)].map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      delay: Math.random() * 5,
-      duration: Math.random() * 15 + 10,
-      text: Math.random() > 0.5 ? "0" : "1",
-      isOrb: Math.random() > 0.7 // 30% chance to be a glowing orb instead of text
-    }));
-    setElements(generatedElements);
-  }, []);
+  // You can easily add or change the skills here!
+  const technologies = [
+    { name: 'React', color: 'text-blue-500 dark:text-blue-400', border: 'border-blue-200 dark:border-blue-900' },
+    { name: 'Tailwind CSS', color: 'text-teal-500 dark:text-teal-400', border: 'border-teal-200 dark:border-teal-900' },
+    { name: 'JavaScript', color: 'text-yellow-600 dark:text-yellow-400', border: 'border-yellow-200 dark:border-yellow-900' },
+    { name: 'Node.js', color: 'text-green-500 dark:text-green-400', border: 'border-green-200 dark:border-green-900' },
+    { name: 'Framer Motion', color: 'text-purple-500 dark:text-purple-400', border: 'border-purple-200 dark:border-purple-900' },
+    { name: 'Figma', color: 'text-pink-500 dark:text-pink-400', border: 'border-pink-200 dark:border-pink-900' },
+  ];
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      {elements.map((el) => (
+    <div className="w-full flex flex-wrap justify-center items-center gap-4 py-8 relative z-10 pointer-events-none">
+      {technologies.map((tech, index) => (
         <motion.div
-          key={el.id}
-          className="absolute font-mono text-2xl md:text-4xl font-bold select-none"
-          style={{ left: el.left, top: el.top }}
-          animate={{
-            y: [0, -150, 0],
-            opacity: [0, 0.4, 0],
-            rotate: [0, 90, 0]
+          key={tech.name}
+          // Initial fade in
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          // Continuous floating animation
+          animate={{ 
+            y: [0, -12, 0],
           }}
           transition={{
-            duration: el.duration,
+            duration: 4,
             repeat: Infinity,
-            delay: el.delay,
-            ease: "linear"
+            delay: index * 0.4, // Stagger the floating effect so they don't move together
+            ease: "easeInOut"
           }}
+          className={`px-5 py-2.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border ${tech.border} ${tech.color} text-sm md:text-base font-semibold tracking-wide`}
         >
-          {el.isOrb ? (
-            <div className="w-3 h-3 rounded-full bg-blue-500/30 blur-sm shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
-          ) : (
-            <span className="text-blue-500/10 dark:text-blue-400/5">{el.text}</span>
-          )}
+          {tech.name}
         </motion.div>
       ))}
     </div>

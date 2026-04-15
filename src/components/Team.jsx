@@ -2,15 +2,23 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
+// Import images from local assets folder (going up one directory level to src/assets)
+import mukeshImage from '../assets/mukesh-yadav.jpg';
+import prakashImage from '../assets/prakash-pant.jpg';
+import rajnishImage from '../assets/rajnish-sharma.jpg';
+import bishantImage from '../assets/bishant-ojha.jpg';
+import prasamshaImage from '../assets/prasamsha-dhungana.jpg';
+import prashannaImage from '../assets/prashanna-pudasaini.jpg';
+
 export default function Team() {
-  // Team Data - ALL 6 MEMBERS
+  // Team Data - ALL 6 MEMBERS with local images mapped correctly
   const team = [
-    { name: "Mukesh Yadav", title: "Founder, CEO & Creative Director", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" },
-    { name: "Prakash Pant", title: "Social Media Manager", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" },
-    { name: "Rajnish Sharma", title: "Video Editor & Graphic Designer", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" },
-    { name: "Bishant Ojha", title: "Graphic Designer", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80" },
-    { name: "Prasamsha Dhungana", title: "Web Developer", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" },
-    { name: "Prashanna Pudasaini", title: "Web Developer", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" }
+    { name: "Mukesh Yadav", title: "Founder, CEO & Creative Director", image: mukeshImage },
+    { name: "Prakash Pant", title: "Social Media Manager", image: prakashImage },
+    { name: "Rajnish Sharma", title: "Video Editor & Graphic Designer", image: rajnishImage },
+    { name: "Bishant Ojha", title: "Graphic Designer", image: bishantImage },
+    { name: "Prasamsha Dhungana", title: "Web Developer", image: prasamshaImage },
+    { name: "Prashanna Pudasaini", title: "Web Developer", image: prashannaImage }
   ];
 
   // Parallax Showcase Data (Intro + Services)
@@ -71,7 +79,7 @@ export default function Team() {
         ))}
       </section>
 
-      {/* TEAM SECTION - ALL 6 MEMBERS VISIBLE HORIZONTALLY WITHOUT SCROLLING */}
+      {/* TEAM SECTION - ALL 6 MEMBERS VISIBLE HORIZONTALLY */}
       <div className="w-full py-20 md:py-24">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
@@ -85,7 +93,7 @@ export default function Team() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
             {team.map((member, index) => (
               <div key={index} className="flex flex-col items-center group">
-                {/* Smaller Photo - 160px square max */}
+                {/* Profile Photo */}
                 <div className="w-full max-w-[160px] mx-auto aspect-square overflow-hidden bg-slate-100 dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700 transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.02]">
                   <img 
                     src={member.image} 
@@ -93,12 +101,12 @@ export default function Team() {
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" 
                   />
                 </div>
-                {/* Name - smaller text for better fit */}
+                {/* Name */}
                 <h4 className="text-sm sm:text-base md:text-lg font-bold text-slate-900 dark:text-white mt-3 mb-1 text-center">
                   {member.name}
                 </h4>
-                {/* Title - smaller text */}
-                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">
+                {/* Title */}
+                <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 text-center leading-tight px-2">
                   {member.title}
                 </p>
               </div>
