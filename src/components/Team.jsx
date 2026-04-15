@@ -18,7 +18,7 @@ export default function Team() {
     {
       id: "about",
       bg: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80",
-      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80", 
+      image: "https://media.licdn.com/dms/image/v2/D4E12AQFNjubH--R0Ng/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1721198696543?e=2147483647&v=beta&t=WrJJ3CBVzCHh7ZWOdpLUIPvcikivvd7ICio0OKOEv3g", 
       title: "Engineering Digital Legacies",
       subtitle: "Established 2021",
       desc: "MotionAge transforms complex ideas into high-impact visual stories. We are a premier creative design agency specializing in enterprise-grade Web Development, cinematic Video Editing, and data-driven Social Media Management. By merging technical precision with an artistic soul, we drive strategic growth globally.",
@@ -29,7 +29,7 @@ export default function Team() {
     {
       id: "web-dev",
       bg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80", 
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrwFljDq2ODJXWsVEyaqRG0WSnGZ2KzqztsA&s", 
       title: "Web Development",
       subtitle: "Digital Engines",
       desc: "We engineer lightning-fast, scalable web applications tailored to your business needs. From sleek corporate landing pages to complex e-commerce ecosystems, our code is built for high performance, top-tier security, and maximum conversion.",
@@ -40,7 +40,7 @@ export default function Team() {
     {
       id: "video-editing",
       bg: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920&q=80",
-      image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80", 
+      image: "https://www.premiumbeat.com/blog/wp-content/uploads/2019/05/cinematic-cover.jpg", 
       title: "Cinematic Video",
       subtitle: "Visual Storytelling",
       desc: "Transform your raw footage into captivating cinematic experiences. Our elite editing team crafts high-retention social reels, corporate documentaries, and immersive promotional campaigns that keep your audience hooked.",
