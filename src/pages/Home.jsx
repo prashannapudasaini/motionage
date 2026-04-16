@@ -147,7 +147,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: Trophy, value: 1000, suffix: "+", label: "Projects Delivered" },
+    { icon: Trophy, value: 600, suffix: "+", label: "Projects Delivered" },
     { icon: Users, value: 500, suffix: "+", label: "Happy Clients" },
     { icon: Globe, value: 15, suffix: "+", label: "Professionals Engaged" },
     { icon: ShieldCheck, value: 5, suffix: "+", label: "Years of Creativity" }
