@@ -8,6 +8,19 @@ import Hero from '../components/Hero';
 import ClickParticles from '../components/ClickParticles'; 
 import itImage from '../assets/hero_it.jpeg'; 
 
+// Import Client Logos
+import logo1 from '../assets/1.png';
+import logo2 from '../assets/2.png';
+import logo3 from '../assets/3.png';
+import logo4 from '../assets/4.png';
+import logo5 from '../assets/5.png';
+import logo6 from '../assets/6.png';
+import logo7 from '../assets/7.png';
+import logo8 from '../assets/8.png';
+import logo9 from '../assets/9.png';
+import logo10 from '../assets/10.png';
+import logo11 from '../assets/11.png';
+
 // =====================================================================
 // ADVANCED CORE COMPONENTS
 // =====================================================================
@@ -147,7 +160,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: Trophy, value: 600, suffix: "+", label: "Projects Delivered" },
+    { icon: Trophy, value: 1000, suffix: "+", label: "Projects Delivered" },
     { icon: Users, value: 500, suffix: "+", label: "Happy Clients" },
     { icon: Globe, value: 15, suffix: "+", label: "Professionals Engaged" },
     { icon: ShieldCheck, value: 5, suffix: "+", label: "Years of Creativity" }
@@ -161,21 +174,29 @@ export default function Home() {
 
   const techStack = ["React", "Next.js", "Node.js", "Python", "AWS", "Docker", "Figma", "Premiere", "After Effects", "PostgreSQL", "GraphQL"];
 
+  // Array of client logos
+  const clientLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11];
+
   return (
     <div className="w-full bg-slate-50 dark:bg-[#050814] selection:bg-blue-500/30 selection:text-blue-900 dark:selection:text-blue-200 font-sans overflow-x-hidden transition-colors duration-500">
       <SEO title="Home" description="Premium IT solutions, web development, and digital marketing from MotionAge." />
       <ClickParticles />
       <Hero />
 
-      {/* 1. TRUST MARQUEE */}
+      {/* 1. TRUST MARQUEE WITH IMAGES */}
       <section className="py-6 md:py-8 border-y border-slate-200 dark:border-white/5 bg-white dark:bg-white/5 flex overflow-hidden relative">
         <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white dark:from-[#050814] to-transparent z-10"></div>
         <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white dark:from-[#050814] to-transparent z-10"></div>
-        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ repeat: Infinity, ease: "linear", duration: 30 }} className="flex whitespace-nowrap gap-12 md:gap-20 items-center px-4 md:px-8">
-          {[...Array(3)].map((_, i) => (
+        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ repeat: Infinity, ease: "linear", duration: 40 }} className="flex whitespace-nowrap gap-12 md:gap-20 items-center px-4 md:px-8">
+          {[...Array(2)].map((_, i) => (
             <React.Fragment key={i}>
-              {['ORACLE', 'CLOUDFATORY', 'BROADWAY', 'F1SOFT', 'TECHNOVA'].map((brand, j) => (
-                <span key={j} className="text-lg md:text-xl font-black text-slate-300 dark:text-slate-500/50 uppercase tracking-widest">{brand}</span>
+              {clientLogos.map((logo, j) => (
+                <img 
+                  key={j} 
+                  src={logo} 
+                  alt={`Client Logo ${j + 1}`} 
+                  className="h-10 md:h-14 w-auto object-contain grayscale opacity-50 dark:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                />
               ))}
             </React.Fragment>
           ))}
