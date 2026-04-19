@@ -183,11 +183,12 @@ export default function Home() {
       <ClickParticles />
       <Hero />
 
-      {/* 1. TRUST MARQUEE WITH IMAGES */}
-      <section className="py-6 md:py-8 border-y border-slate-200 dark:border-white/5 bg-white dark:bg-white/5 flex overflow-hidden relative">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white dark:from-[#050814] to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white dark:from-[#050814] to-transparent z-10"></div>
-        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ repeat: Infinity, ease: "linear", duration: 40 }} className="flex whitespace-nowrap gap-12 md:gap-20 items-center px-4 md:px-8">
+    {/* 1. TRUST MARQUEE WITH IMAGES */}
+      <section className="py-8 md:py-10 border-y border-slate-200 dark:border-white/5 bg-white dark:bg-white/5 flex overflow-hidden relative">
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
+        
+        <motion.div animate={{ x: ["0%", "-50%"] }} transition={{ repeat: Infinity, ease: "linear", duration: 40 }} className="flex whitespace-nowrap gap-16 md:gap-24 items-center px-4 md:px-8">
           {[...Array(2)].map((_, i) => (
             <React.Fragment key={i}>
               {clientLogos.map((logo, j) => (
@@ -195,7 +196,7 @@ export default function Home() {
                   key={j} 
                   src={logo} 
                   alt={`Client Logo ${j + 1}`} 
-                  className="h-10 md:h-14 w-auto object-contain grayscale opacity-50 dark:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-300" 
+                  className="h-12 md:h-16 w-auto object-contain opacity-95 hover:opacity-100 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-[0_10px_20px_rgba(59,130,246,0.3)] transition-all duration-300 cursor-grab" 
                 />
               ))}
             </React.Fragment>
