@@ -6,7 +6,9 @@ import { motion, useInView, useMotionValue, useSpring, useScroll, useTransform }
 import SEO from '../components/SEO';
 import Hero from '../components/Hero';
 import ClickParticles from '../components/ClickParticles'; 
-import itImage from '../assets/hero_it.jpeg'; 
+import itImage from '../assets/hero_it.jpeg';
+import hero_1 from "../assets/hero_1.png";
+import hero_2 from "../assets/hero_2.png"; 
 
 // Import Client Logos
 import logo1 from '../assets/1.png';
@@ -142,25 +144,25 @@ export default function Home() {
     { icon: MonitorPlay, title: "Video Production", desc: "High-impact video editing and motion graphics that tell your brand's unique story compellingly." }
   ];
 
-  const projects = [
-    {
-      title: "7eleveneduconsultancy",
-      category: "Web Application/Logo Design",
-      impact: "Secure, professional portal with modern architecture.",
-      tech: ["React", "Node.js", "Tailwind CSS"],
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJfHg3TJ-tKIX_ehDTXZ08P9pCwtp-grBh-Q&s"
-    },
-    {
-      title: "Goleybusinessconsultant",
-      category: "Web Application/Logo Design",
-      impact: "Immersive UI/UX ensuring 100% client satisfaction.",
-      tech: ["Next.js", "Framer Motion", "AWS"],
-      image: "https://th.bing.com/th/id/OIP._bRJvsFZId9qh-A7T9xWwQHaHa?w=179&h=180&c=7&r=0&o=7&dpr=1.1&pid=1.7&rm=3"
-    }
-  ];
+ const projects = [
+  {
+    title: "Visual Identity Craft",
+    category: "Brand Visual Identity System",
+    impact: "Developed a cohesive visual language that enhances brand recognition and builds instant trust.",
+    tech: ["Adobe Suite", "Figma", "Visual Storytelling"],
+    image: hero_1
+  },
+  {
+    title: "Digital Experience Engineering",
+    category: "Full-Stack Web Architecture",
+    impact: "Built a fast, scalable, and interactive web platform focused on performance and seamless user experience.",
+    tech: ["Next.js", "Node.js", "Cloud Architecture"],
+    image: hero_2
+  }
+];
 
   const stats = [
-    { icon: Trophy, value: 1000, suffix: "+", label: "Projects Delivered" },
+    { icon: Trophy, value: 600, suffix: "+", label: "Projects Delivered" },
     { icon: Users, value: 500, suffix: "+", label: "Happy Clients" },
     { icon: Globe, value: 15, suffix: "+", label: "Professionals Engaged" },
     { icon: ShieldCheck, value: 5, suffix: "+", label: "Years of Creativity" }
@@ -183,39 +185,30 @@ export default function Home() {
       <ClickParticles />
       <Hero />
 
-      {/* 1. TRUST MARQUEE (Static Premium Row) */}
-<section className="py-8 md:py-10 border-y border-slate-200 dark:border-white/5 
-  bg-gradient-to-r from-white via-slate-50 to-white 
-  dark:from-[#050814] dark:via-[#070b17] dark:to-[#050814] 
-  flex overflow-hidden relative select-none">
-
-  {/* Edge fade */}
-  <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 
-    bg-gradient-to-r from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
-  
-  <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 
-    bg-gradient-to-l from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
-
-  {/* Logos (NO ANIMATION) */}
-  <div className="flex flex-nowrap gap-16 md:gap-24 items-center px-6 md:px-10 w-full justify-center">
-
-    {clientLogos.map((logo, j) => (
-      <div
-        key={j}
-        className="flex items-center justify-center"
-      >
-        <img
-          src={logo}
-          alt={`Client Logo ${j + 1}`}
-          className="h-14 md:h-16 lg:h-18 w-auto object-contain 
-          opacity-90 dark:opacity-85 
-          hover:opacity-100 transition duration-300"
-        />
-      </div>
-    ))}
-
-  </div>
-</section>
+      {/* 1. TRUST MARQUEE (Ultra-Smooth Glide) */}
+      <section className="py-8 md:py-10 border-y border-slate-200 dark:border-white/5 bg-white dark:bg-white/5 flex overflow-hidden relative select-none">
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white dark:from-[#050814] to-transparent z-10 pointer-events-none"></div>
+        
+        <motion.div 
+          animate={{ x: ["0%", "-50%"] }} 
+          transition={{ repeat: Infinity, ease: "linear", duration: 25 }} 
+          className="flex whitespace-nowrap gap-16 md:gap-24 items-center px-4 md:px-8 will-change-transform"
+        >
+          {[...Array(2)].map((_, i) => (
+            <React.Fragment key={i}>
+              {clientLogos.map((logo, j) => (
+                <img 
+                  key={j} 
+                  src={logo} 
+                  alt={`Client Logo ${j + 1}`} 
+                  className="h-10 md:h-12 w-auto object-contain opacity-70 dark:opacity-60 pointer-events-none" 
+                />
+              ))}
+            </React.Fragment>
+          ))}
+        </motion.div>
+      </section>
 
       {/* 2. CORPORATE PROFILE */}
       <section className="py-20 md:py-32 bg-white dark:bg-[#0a0f1c] relative z-10 border-b border-slate-200 dark:border-white/5 transition-colors duration-500">
@@ -375,56 +368,44 @@ export default function Home() {
       </section>
 
       {/* 6. PERFORMANCE METRICS (Monumental Look) */}
-      <section className="relative py-28 md:py-36 bg-slate-950 dark:bg-[#02050A] overflow-hidden border-b border-slate-800/60">
+       <section className="relative py-12 md:py-16 bg-slate-950 dark:bg-[#02050A] overflow-hidden border-b border-slate-800/60">
 
-  {/* Background glow */}
+  {/* Background glow (smaller) */}
   <div className="absolute inset-0">
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-      w-[900px] h-[900px] bg-blue-500/20 blur-[180px] rounded-full" />
-
-    {/* Subtle animated grid */}
-    <div className="absolute inset-0 opacity-40 
-      bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] 
-      bg-[size:50px_50px] animate-pulse" />
+      w-[500px] h-[500px] bg-blue-500/15 blur-[140px] rounded-full" />
   </div>
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
 
       {stats.map((stat, idx) => (
         <motion.div
           key={idx}
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          initial={{ opacity: 0, y: 15, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: idx * 0.12 }}
-          whileHover={{ y: -10 }}
-          className="relative flex flex-col items-center text-center group"
+          transition={{ delay: idx * 0.06 }}
+          whileHover={{ y: -4 }}
+          className="flex flex-col items-center text-center"
         >
 
-          {/* Glow pulse */}
-          <div className="absolute -inset-6 bg-blue-500/10 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500" />
+          {/* Icon (smaller) */}
+          <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg 
+            bg-white/5 border border-white/10 
+            flex items-center justify-center mb-4">
 
-          {/* Icon node */}
-          <div className="relative w-16 h-16 md:w-18 md:h-18 rounded-2xl 
-            bg-white/5 border border-white/10 backdrop-blur-xl 
-            flex items-center justify-center mb-6
-            group-hover:border-blue-500/40 transition">
-
-            {/* inner glow */}
-            <div className="absolute inset-0 rounded-2xl bg-blue-500/10 opacity-0 group-hover:opacity-100 transition" />
-
-            <stat.icon className="w-6 h-6 text-blue-400 relative z-10" />
+            <stat.icon className="w-4 h-4 text-blue-400" />
           </div>
 
-          {/* Number */}
-          <h4 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-3 tracking-tighter leading-none">
+          {/* Number (slightly smaller) */}
+          <h4 className="text-2xl md:text-4xl font-black text-white mb-1 tracking-tight">
             <AnimatedCounter from={0} to={stat.value} suffix={stat.suffix} />
           </h4>
 
           {/* Label */}
-          <p className="text-blue-300/70 dark:text-slate-400 text-[11px] md:text-xs font-bold uppercase tracking-[0.3em]">
+          <p className="text-blue-300/60 dark:text-slate-400 text-[10px] font-semibold uppercase tracking-[0.25em]">
             {stat.label}
           </p>
 
@@ -502,89 +483,50 @@ export default function Home() {
       </section>
 
       {/* 8. AGILE WORKFLOW */}
-      <section className="relative py-28 md:py-36 bg-white dark:bg-[#050814] border-b border-slate-200 dark:border-white/5 overflow-hidden">
+     <section className="relative py-20 md:py-24 bg-white dark:bg-[#050814] border-b border-slate-200 dark:border-white/5">
 
-  {/* Background glow */}
-  <div className="absolute inset-0">
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-      w-[900px] h-[900px] bg-blue-500/10 blur-[160px] rounded-full" />
-  </div>
-
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     {/* Header */}
-    <motion.div 
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true }}
-      variants={fadeUp}
-      className="text-center max-w-4xl mx-auto mb-24"
-    >
-      <h4 className="text-blue-600 dark:text-blue-400 font-extrabold uppercase tracking-[0.3em] text-xs mb-4">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <h4 className="text-blue-600 dark:text-blue-400 font-semibold uppercase tracking-[0.25em] text-xs mb-3">
         Methodology
       </h4>
 
-      <TextReveal 
-        text="The MotionAge Framework."
-        className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]"
-      />
-    </motion.div>
-
-    {/* Flow line (animated energy path) */}
-    <div className="hidden md:block absolute top-40 left-1/2 -translate-x-1/2 w-[70%] h-[2px] bg-slate-200 dark:bg-slate-800">
-      <motion.div 
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.8, ease: "easeInOut" }}
-        className="w-full h-full origin-left bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500"
-      />
+      <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+        The MotionAge Framework
+      </h2>
     </div>
 
     {/* Steps */}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-16">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
 
       {processSteps.map((step, idx) => (
-        <motion.div
+        <div
           key={idx}
-          initial={{ opacity: 0, y: 40, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.2 }}
-          whileHover={{ y: -10, scale: 1.02 }}
-          className="relative flex flex-col items-center text-center group"
+          className="flex flex-col items-center text-center"
         >
 
-          {/* Glow ring */}
-          <div className="absolute -top-6 w-32 h-32 rounded-full 
-            bg-blue-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition" />
-
-          {/* Icon container */}
-          <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full 
-            bg-gradient-to-br from-white to-slate-100 
-            dark:from-[#0c1222] dark:to-[#0a0f1c]
+          {/* Icon */}
+          <div className="w-16 h-16 md:w-18 md:h-18 rounded-xl 
+            bg-slate-50 dark:bg-white/5 
             border border-slate-200 dark:border-white/10
-            shadow-[0_20px_60px_rgba(0,0,0,0.15)]
-            flex items-center justify-center mb-8
-            group-hover:shadow-blue-500/20 transition-all duration-300">
+            flex items-center justify-center mb-5">
 
-            {/* Inner glow */}
-            <div className="absolute inset-0 rounded-full bg-blue-500/5 opacity-0 group-hover:opacity-100 transition" />
-
-            <step.icon size={34} strokeWidth={2} className="text-blue-600 dark:text-blue-400 relative z-10" />
+            <step.icon size={22} className="text-blue-500" />
           </div>
 
           {/* Title */}
-          <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
+          <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
             {step.title}
           </h3>
 
           {/* Description */}
-          <p className="text-base text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-sm">
+          <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-xs">
             {step.desc}
           </p>
 
-        </motion.div>
+        </div>
       ))}
 
     </div>
