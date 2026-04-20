@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Layers, Cpu, Code2, Globe } from 'lucide-react';
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();
@@ -11,231 +11,246 @@ export default function ServiceDetail() {
     window.scrollTo(0, 0);
   }, [serviceId]);
 
-  // FULLY EXPANDED Content Database with HIGH-QUALITY INTERNET IMAGES (Unsplash)
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  };
+
+  // EXPANDED Enterprise-Grade Content Database
   const serviceData = {
-    // ---------------- DEVELOPMENT ----------------
     "web-dev": {
       title: "Web Development",
       tagline: "High-Performance Digital Experiences.",
-      // Unsplash Image: Laptop with code
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-      description: "We build blazing-fast, SEO-optimized websites using modern frameworks like React, Next.js, and Tailwind CSS. Your website isn't just a digital brochure; it's your hardest working salesperson. We focus on clean architecture, lightning-fast load times, and responsive designs that look perfect on any device.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80",
+      description: "We architect blazing-fast, SEO-optimized web applications using modern, edge-deployed frameworks. Your website isn't just a digital brochure; it's a scalable revenue engine. We focus on clean architecture, sub-second load times, and responsive interfaces that convert visitors into dedicated customers without dropping a single frame.",
       features: [
-        "React & Next.js Frameworks", 
-        "Responsive Mobile-First Design", 
-        "Technical SEO Optimization", 
-        "E-Commerce Integrations (Shopify/Custom)", 
-        "CMS Setup (WordPress/Sanity/Strapi)", 
-        "Speed & Performance Audits",
+        "React & Next.js Headless Architecture", 
+        "Responsive, Mobile-First UI/UX Integration", 
+        "Technical SEO & Core Web Vitals Optimization", 
+        "E-Commerce Infrastructure (Shopify/Custom)", 
+        "CMS Setup (Sanity, Strapi, Contentful)", 
+        "Bank-Level Security Protocols & SSL",
         "Web Accessibility (WCAG) Compliance",
-        "Secure Hosting Setup"
-      ]
+        "Zero-Downtime Cloud Deployment"
+      ],
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Vercel", "AWS"]
     },
     "app-dev": {
       title: "App Development",
       tagline: "Your Business in Their Pocket.",
-      // Unsplash Image: Mobile app development / UI
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-      description: "From initial concept to App Store launch, we engineer seamless iOS and Android applications. We focus on highly intuitive UI/UX paired with robust, scalable backend architecture to ensure your app handles thousands of users without breaking a sweat.",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=2000&q=80",
+      description: "From initial concept to App Store launch, we engineer seamless iOS and Android applications. We focus on highly intuitive UX paired with robust, scalable backend architecture to ensure your mobile ecosystem handles thousands of concurrent users seamlessly.",
       features: [
-        "iOS & Android Native Apps", 
-        "React Native Cross-Platform", 
-        "User Authentication (OAuth/JWT)", 
-        "In-App Purchases & Stripe Payments", 
-        "Push Notifications Setup", 
-        "App Store & Google Play Deployment",
-        "Real-time Chat & Messaging",
-        "Offline Mode Functionality"
-      ]
+        "High-Performance iOS & Android Native Apps", 
+        "React Native & Flutter Cross-Platform Builds", 
+        "Secure User Authentication (OAuth/JWT/Biometrics)", 
+        "In-App Purchases & Enterprise Payment Gateways", 
+        "Real-Time Push Notification Infrastructure", 
+        "App Store & Google Play Compliance & Deployment",
+        "Real-time WebSocket Chat & Messaging",
+        "Offline-First Architecture & Data Sync"
+      ],
+      techStack: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "PostgreSQL", "GCP"]
     },
     "software": {
       title: "Custom Software",
       tagline: "Enterprise Solutions that Scale.",
-      // Unsplash Image: Complex code on screen
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-      description: "Off-the-shelf software rarely fits perfectly. We develop custom internal tools, CRMs, and SaaS platforms engineered specifically around your unique operational bottlenecks. Our codebases are clean, documented, and built to scale globally.",
+      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=2000&q=80",
+      description: "Off-the-shelf software rarely fits enterprise workflows perfectly. We develop custom internal tools, intelligent CRMs, and highly-available SaaS platforms engineered specifically around your unique operational bottlenecks. Our codebases are clean, deeply documented, and built to scale globally.",
       features: [
-        "Custom Dashboard UI/UX", 
-        "Relational Database Architecture", 
-        "RESTful & GraphQL API Development", 
-        "Cloud Hosting (AWS/Azure/GCP)", 
-        "Automated Workflow Scripts", 
-        "Bank-Level Security Protocols",
-        "Third-Party Software Integration",
-        "Legacy System Migration"
-      ]
+        "Custom Operational Dashboard UI/UX", 
+        "Complex Relational & NoSQL Database Architecture", 
+        "RESTful & GraphQL API Microservices", 
+        "Scalable Cloud Hosting (AWS/Azure/GCP)", 
+        "Automated Workflow & Data Pipeline Scripts", 
+        "Zero-Trust Security Architectures",
+        "Seamless Third-Party Software Integration",
+        "Legacy System Refactoring & Migration"
+      ],
+      techStack: ["Python", "Node.js", "Go", "Docker", "Kubernetes", "AWS EC2", "MongoDB"]
     },
-    // ---------------- MARKETING & DESIGN ----------------
     "branding": {
       title: "Branding & Identity",
       tagline: "Your Brand's Visual DNA.",
-      // Unsplash Image: Design agency / Color swatches
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
-      description: "We don't just design logos; we engineer comprehensive visual identities. From typography selection to color psychology, we ensure your brand speaks volumes before you ever say a word. We create the foundational assets that make your business instantly recognizable.",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80",
+      description: "We don't just design logos; we engineer comprehensive visual identities. From typography selection to color psychology, we ensure your brand commands authority in crowded markets. We create the foundational visual assets that make your business instantly recognizable to high-ticket clients.",
       features: [
-        "Custom Minimalist & Complex Logo Design", 
-        "Comprehensive Brand Guidelines Book", 
-        "Business Stationery & Letterheads", 
-        "Investor Pitch Deck Templates", 
-        "Typography Selection & Pairing", 
-        "Color Palette Curation & Psychology",
-        "Brand Voice & Messaging Strategy",
-        "Merchandise Mockups"
-      ]
+        "Custom Minimalist & Strategic Logo Design", 
+        "Comprehensive Enterprise Brand Guidelines", 
+        "Corporate Stationery & Digital Letterheads", 
+        "High-Converting Investor Pitch Decks", 
+        "Strategic Typography Selection & Pairing", 
+        "Color Palette Curation based on Psychology",
+        "Brand Voice & Market Positioning Strategy",
+        "High-Fidelity Merchandise Mockups"
+      ],
+      techStack: ["Figma", "Adobe Illustrator", "Photoshop", "InDesign", "Cinema 4D"]
     },
     "marketing": {
       title: "Marketing & Advertising",
       tagline: "Creatives that Convert.",
-      // Unsplash Image: Analytics / Social media planning
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-      description: "Thumb-stopping visuals designed specifically for the modern social feed. We craft high-end graphics tailored for Meta Ads, Instagram grids, and email campaigns. We focus on A/B testing visual hooks to ensure your marketing budget delivers maximum ROI.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80",
+      description: "Thumb-stopping visuals designed specifically for the modern social feed and algorithmic ad platforms. We craft high-end graphics tailored for Meta Ads, high-conversion landing pages, and email campaigns. We utilize relentless A/B testing to ensure your marketing budget delivers absolute maximum ROI.",
       features: [
-        "Social Media Grid Graphics", 
-        "High-Conversion Digital Ad Creatives", 
-        "Email Newsletter Design", 
-        "Event Flyers & Promotional Posters", 
-        "Campaign Strategy & Funnel Design", 
-        "A/B Testing Variations",
-        "YouTube Thumbnails",
-        "LinkedIn Corporate Graphics"
-      ]
+        "Cohesive Social Media Grid Architecture", 
+        "High-Conversion Digital Ad Creatives (Meta/Google)", 
+        "Responsive Email Newsletter Engineering", 
+        "Event Flyers & Digital Promotional Posters", 
+        "End-to-End Campaign Strategy & Funnel Design", 
+        "Multivariate A/B Testing Variations",
+        "High-CTR YouTube Thumbnails",
+        "LinkedIn B2B Corporate Graphics"
+      ],
+      techStack: ["Meta Ads Manager", "Google Analytics", "Klaviyo", "Figma", "After Effects"]
     },
     "print": {
       title: "Print & Publication",
       tagline: "Tangible Excellence.",
-      // Unsplash Image: High quality magazines
-      image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=800&q=80",
-      description: "In a highly digital world, premium print materials stand out more than ever. We design pixel-perfect, CMYK-ready layouts for magazines, corporate brochures, and product packaging that demand to be held and experienced.",
+      image: "https://images.unsplash.com/photo-1587582423116-ec07293f0395?auto=format&fit=crop&w=2000&q=80",
+      description: "In a highly digital world, premium print materials stand out more than ever. We engineer pixel-perfect, CMYK-ready layouts for editorial magazines, corporate brochures, and product packaging that demand to be held, experienced, and remembered.",
       features: [
-        "Multi-page Magazine Layouts", 
-        "Product Packaging & Box Design", 
+        "Multi-page Editorial Magazine Layouts", 
+        "Premium Product Packaging & Box Design", 
         "eBook & Paperback Book Formatting", 
-        "High-End Restaurant Menus", 
-        "Product Label Design", 
-        "Annual Corporate Reports",
-        "Billboard & Hoarding Design",
-        "Business Card Print Preparation"
-      ]
+        "High-End Hospitality & Restaurant Menus", 
+        "Compliance-Ready Product Label Design", 
+        "Annual Corporate Investor Reports",
+        "Large-Format Billboard & Hoarding Design",
+        "Luxury Business Card Print Preparation"
+      ],
+      techStack: ["Adobe InDesign", "Illustrator", "Pantone Matching", "Print Pre-flighting"]
     },
     "specialized": {
       title: "Specialized AI Design",
       tagline: "The Future of Visuals.",
-      // Unsplash Image: Abstract AI Tech
-      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-      description: "Leveraging cutting-edge tools like Gemini AI, Grok, and ChatGPT alongside Adobe Creative Cloud to produce impossible imagery. We handle complex data visualizations, surreal photo manipulations, and highly technical aesthetic drawings.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=80",
+      description: "Leveraging cutting-edge neural networks alongside human art direction to produce impossible imagery. We handle complex data visualizations, hyper-realistic surreal manipulations, and highly technical aesthetic composites that put your brand at the absolute forefront of innovation.",
       features: [
         "Complex Data Visualization (Infographics)", 
-        "Custom Podcast Cover Art", 
-        "Advanced Photo Retouching", 
-        "AI Image Generation & Prompting", 
-        "Technical Architectural Drawings", 
-        "Custom Digital Illustrations",
-        "Surreal Photo Manipulation",
-        "Vector Tracing"
-      ]
+        "Custom High-Resolution Cover Art", 
+        "Advanced Hyper-Realistic Photo Retouching", 
+        "Generative AI Image Prompting & Blending", 
+        "Technical & Architectural Composites", 
+        "Custom Digital Vectors & Illustrations",
+        "Surreal High-Fantasy Photo Manipulation",
+        "Precision Vector Tracing"
+      ],
+      techStack: ["Midjourney", "Stable Diffusion", "Photoshop Beta", "Figma", "Illustrator"]
     }
   };
 
-  const data = serviceData[serviceId] || serviceData["branding"]; // Fallback if URL is wrong
-  const springAnim = { type: "spring", stiffness: 100, damping: 20 };
+  const data = serviceData[serviceId] || serviceData["branding"]; 
 
   return (
-    <div className="w-full">
-      {/* Hyper-Liquid Hero Section */}
-      <section className="relative pt-24 pb-32 overflow-hidden bg-slate-50 dark:bg-slate-900 flex items-center min-h-[60vh] border-b border-slate-200 dark:border-slate-800">
-        {/* Animated Background Orbs */}
-        <div className="absolute top-10 right-10 w-[400px] h-[400px] bg-blue-500/20 dark:bg-blue-600/20 blur-[100px] rounded-full animate-blob pointer-events-none"></div>
-        <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-600/20 blur-[120px] rounded-full animate-blob pointer-events-none" style={{ animationDelay: '2s' }}></div>
+    <div className="w-full bg-slate-50 dark:bg-[#050814] transition-colors duration-500">
+      
+      {/* EXACT MATCH HERO SECTION (From Screenshot) */}
+      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-[#0a0f1c] flex items-center justify-center min-h-[50vh] border-b border-white/5">
+        {/* Deep cinematic gradient background mimicking the image perfectly */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(30,27,75,0.6)_0%,_rgba(5,8,20,1)_100%)] z-0 pointer-events-none"></div>
+        
+        {/* Subtle glowing orbs from the screenshot */}
+        <div className="absolute top-10 left-[20%] w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)] z-0"></div>
+        <div className="absolute top-20 left-[25%] w-3 h-3 rounded-full bg-blue-600/50 z-0"></div>
+        <div className="absolute top-[30%] left-[40%] w-1.5 h-1.5 rounded-full bg-purple-500/40 z-0"></div>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, scale: 0.9, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={springAnim} className="max-w-4xl mx-auto">
-            <span className="inline-block py-2 px-6 rounded-full bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest text-xs md:text-sm mb-8 shadow-sm border border-slate-100 dark:border-slate-700">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center w-full">
+          <motion.div initial="hidden" animate="show" variants={fadeUp}>
+            {/* The precise Pill Badge from the screenshot */}
+            <div className="inline-block py-1.5 px-5 rounded-full bg-[#111827]/80 backdrop-blur-md border border-white/10 text-blue-400 font-extrabold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-8 shadow-2xl">
               Service Deep Dive
-            </span>
-            <h1 className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white mb-6 tracking-tight drop-shadow-sm">
+            </div>
+            
+            {/* Massive Heading */}
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter drop-shadow-2xl">
               {data.title}
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light leading-relaxed max-w-3xl mx-auto">
+            
+            {/* Subheading */}
+            <p className="text-lg md:text-2xl text-slate-300 font-light tracking-wide max-w-2xl mx-auto">
               {data.tagline}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Content Section with Staggered Animations */}
-      <section className="py-24 bg-white dark:bg-slate-950">
+      {/* MASSIVE CINEMATIC HERO IMAGE */}
+      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 md:-mt-24 z-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+          className="w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-900"
+        >
+          <img src={data.image} alt={data.title} className="w-full h-full object-cover opacity-90" />
+        </motion.div>
+      </section>
+
+      {/* CONTENT SECTION (Enterprise Split Layout) */}
+      <section className="py-24 md:py-32 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
             
-            {/* Left Side: Approach & Full Features List */}
-            <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={springAnim} className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tight">Our Approach</h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                {data.description}
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8">
-                {data.features.map((feat, i) => (
-                  <motion.div 
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05, type: "spring", stiffness: 100 }}
-                    className="flex items-start gap-3 bg-slate-50 dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-500/30 transition-colors group"
-                  >
-                    <CheckCircle2 className="text-blue-600 dark:text-blue-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
-                    <span className="font-medium text-slate-800 dark:text-slate-200 text-sm md:text-base">{feat}</span>
-                  </motion.div>
-                ))}
+            {/* Left Column: Description & Tech Stack */}
+            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="lg:col-span-7 space-y-12">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">The Architecture</h2>
+                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                  {data.description}
+                </p>
+              </div>
+
+              {/* Tech Stack Mini-Bento */}
+              <div className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-white/5 rounded-[2rem] p-8 md:p-10 shadow-sm">
+                <h3 className="text-sm font-extrabold text-blue-600 dark:text-blue-500 uppercase tracking-widest mb-6 flex items-center gap-2">
+                  <Cpu size={16} /> Core Technologies
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {data.techStack.map((tech, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-slate-800/80 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
 
-            {/* Right Side: Liquid Image Representation */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }} 
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }} 
-              viewport={{ once: true }}
-              transition={{ type: "spring", stiffness: 80, damping: 20 }}
-              className="relative h-[500px] md:h-[600px] flex items-center justify-center"
-            >
-              {/* Background glowing blob */}
-              <div className="absolute w-[450px] h-[450px] bg-gradient-to-tr from-purple-400/40 to-blue-400/40 dark:from-purple-600/40 dark:to-blue-600/40 blur-3xl animate-blob" />
-
-              {/* The liquid mask container */}
-              <div className="relative w-[400px] h-[400px] animate-liquid shadow-[0_0_60px_rgba(59,130,246,0.3)] overflow-hidden border border-white/40 dark:border-white/20 flex items-center justify-center z-10 bg-slate-900">
-                
-                {/* Dynamically loaded clear image based on the service clicked */}
-                <img 
-                  src={data.image} 
-                  alt={data.title} 
-                  className="w-full h-full object-cover relative z-10" 
-                />
-
-                {/* Inner glass reflection floating OVER the image to give the liquid look */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/30 dark:via-white/10 to-white/0 animate-[liquid_8s_ease-in-out_infinite_reverse] z-20 pointer-events-none"></div>
+            {/* Right Column: Capabilities List */}
+            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="lg:col-span-5">
+               <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter mb-8 flex items-center gap-3">
+                  <Layers className="text-blue-600 dark:text-blue-500" /> Key Capabilities
+               </h3>
+               
+               <div className="flex flex-col gap-4">
+                {data.features.map((feat, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white dark:hover:bg-[#0c1222] border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-colors group"
+                  >
+                    <CheckCircle2 className="text-blue-600 dark:text-blue-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
+                    <span className="font-medium text-slate-800 dark:text-slate-200 text-sm md:text-base leading-snug">{feat}</span>
+                  </motion.div>
+                ))}
               </div>
-
-              {/* Floating accent elements */}
-              <motion.div animate={{ y: [-10, 10, -10] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="absolute top-10 right-10 w-20 h-20 bg-blue-400/20 backdrop-blur-lg rounded-2xl border border-white/40 dark:border-white/10 rotate-12 z-20" />
-              <motion.div animate={{ y: [10, -10, 10] }} transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }} className="absolute bottom-10 left-10 w-16 h-16 rounded-full bg-purple-400/30 dark:bg-purple-500/30 backdrop-blur-md border border-white/40 dark:border-white/10 z-20" />
             </motion.div>
 
           </div>
         </div>
       </section>
 
-      {/* Call to action */}
-      <section className="py-24 bg-slate-100 dark:bg-slate-900 text-center px-4 border-t border-slate-200 dark:border-slate-800">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={springAnim}>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">
-            Ready to elevate your {data.title.toLowerCase()}?
+      {/* FINAL CTA (Enterprise Grade) */}
+      <section className="py-24 md:py-32 bg-white dark:bg-[#0c1222] text-center px-4 border-t border-slate-200 dark:border-white/5">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter">
+            Ready to scale your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">{data.title.toLowerCase()}</span>?
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-lg">
-            Let's discuss your project requirements and build something extraordinary together.
+          <p className="text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+            Let's schedule a technical discovery call to map out the architecture and timeline for your next major deployment.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-3 bg-blue-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/30 hover:-translate-y-1">
-            Start Your Project <ArrowRight size={24} />
+          <Link to="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-slate-900 dark:bg-blue-600 text-white font-bold text-sm md:text-base uppercase tracking-wider hover:scale-105 transition-transform shadow-xl">
+            Initiate Project <ArrowRight size={20} />
           </Link>
         </motion.div>
       </section>
