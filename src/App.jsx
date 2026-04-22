@@ -14,6 +14,7 @@ import ServicesPage from './pages/ServicesPage';
 import ServiceDetail from './pages/ServiceDetail';
 import PortfolioPage from './pages/PortfolioPage';
 import AboutPage from './pages/AboutPage';
+import BlogPage from './pages/BlogPage'; // Added BlogPage Import
 import ContactPage from './pages/ContactPage';
 import VacancyPage from './pages/VacancyPage';
 import AdminDashboard from './pages/AdminDashboard';
@@ -54,6 +55,10 @@ export default function App() {
               <Route path="/services" element={<ServicesPage />} /> 
               <Route path="/services/:serviceId" element={<ServiceDetail />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
+              
+              {/* Added Blog Route */}
+              <Route path="/blog" element={<BlogPage />} /> 
+              
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/vacancy" element={<VacancyPage />} />
               

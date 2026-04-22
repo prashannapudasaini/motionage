@@ -13,7 +13,7 @@ export default function ServiceDetail() {
 
   const fadeUp = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
   };
 
   // EXPANDED Enterprise-Grade Content Database
@@ -142,70 +142,70 @@ export default function ServiceDetail() {
   const data = serviceData[serviceId] || serviceData["branding"]; 
 
   return (
-    <div className="w-full bg-slate-50 dark:bg-[#050814] transition-colors duration-500">
+    <div className="w-full bg-slate-50 dark:bg-[#050814] transition-colors duration-500 font-sans">
       
-      {/* EXACT MATCH HERO SECTION (From Screenshot) */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 overflow-hidden bg-[#0a0f1c] flex items-center justify-center min-h-[50vh] border-b border-white/5">
-        {/* Deep cinematic gradient background mimicking the image perfectly */}
+      {/* EXACT MATCH HERO SECTION (Scaled Down) */}
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-[#0a0f1c] flex items-center justify-center min-h-[45vh] border-b border-white/5">
+        {/* Deep cinematic gradient background */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(30,27,75,0.6)_0%,_rgba(5,8,20,1)_100%)] z-0 pointer-events-none"></div>
         
-        {/* Subtle glowing orbs from the screenshot */}
-        <div className="absolute top-10 left-[20%] w-2 h-2 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)] z-0"></div>
-        <div className="absolute top-20 left-[25%] w-3 h-3 rounded-full bg-blue-600/50 z-0"></div>
-        <div className="absolute top-[30%] left-[40%] w-1.5 h-1.5 rounded-full bg-purple-500/40 z-0"></div>
+        {/* Subtle glowing orbs */}
+        <div className="absolute top-10 left-[20%] w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)] z-0"></div>
+        <div className="absolute top-20 left-[25%] w-2 h-2 rounded-full bg-blue-600/50 z-0"></div>
+        <div className="absolute top-[30%] left-[40%] w-1 h-1 rounded-full bg-purple-500/40 z-0"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 text-center w-full">
           <motion.div initial="hidden" animate="show" variants={fadeUp}>
-            {/* The precise Pill Badge from the screenshot */}
-            <div className="inline-block py-1.5 px-5 rounded-full bg-[#111827]/80 backdrop-blur-md border border-white/10 text-blue-400 font-extrabold uppercase tracking-[0.2em] text-[10px] md:text-xs mb-8 shadow-2xl">
+            {/* Pill Badge */}
+            <div className="inline-block py-1.5 px-4 rounded-full bg-[#111827]/80 backdrop-blur-md border border-white/10 text-blue-400 font-extrabold uppercase tracking-[0.2em] text-[9px] md:text-[10px] mb-6 shadow-xl">
               Service Deep Dive
             </div>
             
-            {/* Massive Heading */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tighter drop-shadow-2xl">
+            {/* Scaled Heading */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4 tracking-tighter drop-shadow-xl leading-[1.05]">
               {data.title}
             </h1>
             
             {/* Subheading */}
-            <p className="text-lg md:text-2xl text-slate-300 font-light tracking-wide max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-slate-300 font-light tracking-wide max-w-2xl mx-auto">
               {data.tagline}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* MASSIVE CINEMATIC HERO IMAGE */}
-      <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 md:-mt-24 z-20">
+      {/* CINEMATIC HERO IMAGE (Tighter Margin) */}
+      <section className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 md:-mt-16 z-20">
         <motion.div 
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-          className="w-full aspect-[16/9] md:aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-900"
+          initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+          className="w-full aspect-[16/9] md:aspect-[21/9] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800/80 bg-slate-900"
         >
           <img src={data.image} alt={data.title} className="w-full h-full object-cover opacity-90" />
         </motion.div>
       </section>
 
       {/* CONTENT SECTION (Enterprise Split Layout) */}
-      <section className="py-24 md:py-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+      <section className="py-16 md:py-24 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left Column: Description & Tech Stack */}
-            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="lg:col-span-7 space-y-12">
+            <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="lg:col-span-7 space-y-10">
               <div>
-                <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">The Architecture</h2>
-                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter mb-4 leading-[1.05]">The Architecture</h2>
+                <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 font-light leading-relaxed">
                   {data.description}
                 </p>
               </div>
 
               {/* Tech Stack Mini-Bento */}
-              <div className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-white/5 rounded-[2rem] p-8 md:p-10 shadow-sm">
-                <h3 className="text-sm font-extrabold text-blue-600 dark:text-blue-500 uppercase tracking-widest mb-6 flex items-center gap-2">
-                  <Cpu size={16} /> Core Technologies
+              <div className="bg-white dark:bg-[#0c1222] border border-slate-200 dark:border-white/5 rounded-[1.5rem] p-6 md:p-8 shadow-sm">
+                <h3 className="text-[11px] md:text-xs font-extrabold text-blue-600 dark:text-blue-500 uppercase tracking-widest mb-5 flex items-center gap-2">
+                  <Cpu size={14} /> Core Technologies
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   {data.techStack.map((tech, idx) => (
-                    <span key={idx} className="px-4 py-2 bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-slate-800/80 rounded-lg text-sm font-bold text-slate-700 dark:text-slate-300">
+                    <span key={idx} className="px-3 py-1.5 bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-slate-800/80 rounded-md text-xs font-bold text-slate-700 dark:text-slate-300">
                       {tech}
                     </span>
                   ))}
@@ -215,22 +215,22 @@ export default function ServiceDetail() {
 
             {/* Right Column: Capabilities List */}
             <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="lg:col-span-5">
-               <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter mb-8 flex items-center gap-3">
-                  <Layers className="text-blue-600 dark:text-blue-500" /> Key Capabilities
+               <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 flex items-center gap-3">
+                  <Layers className="text-blue-600 dark:text-blue-500" size={24} /> Key Capabilities
                </h3>
                
-               <div className="flex flex-col gap-4">
+               <div className="flex flex-col gap-3">
                 {data.features.map((feat, i) => (
                   <motion.div 
                     key={i}
-                    initial={{ opacity: 0, x: 20 }}
+                    initial={{ opacity: 0, x: 15 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex items-start gap-4 p-4 rounded-2xl hover:bg-white dark:hover:bg-[#0c1222] border border-transparent hover:border-slate-200 dark:hover:border-slate-800 transition-colors group"
+                    className="flex items-start gap-3 p-4 rounded-xl hover:bg-white dark:hover:bg-[#0c1222] border border-transparent hover:border-slate-200 dark:hover:border-slate-800/80 transition-colors group"
                   >
-                    <CheckCircle2 className="text-blue-600 dark:text-blue-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={20} />
-                    <span className="font-medium text-slate-800 dark:text-slate-200 text-sm md:text-base leading-snug">{feat}</span>
+                    <CheckCircle2 className="text-blue-600 dark:text-blue-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={18} />
+                    <span className="font-medium text-slate-800 dark:text-slate-200 text-sm leading-snug">{feat}</span>
                   </motion.div>
                 ))}
               </div>
@@ -241,16 +241,16 @@ export default function ServiceDetail() {
       </section>
 
       {/* FINAL CTA (Enterprise Grade) */}
-      <section className="py-24 md:py-32 bg-white dark:bg-[#0c1222] text-center px-4 border-t border-slate-200 dark:border-white/5">
-        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} variants={fadeUp} className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter">
+      <section className="py-16 md:py-24 bg-white dark:bg-[#0c1222] text-center px-4 border-t border-slate-200 dark:border-white/5">
+        <motion.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp} className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-5 tracking-tighter leading-[1.05]">
             Ready to scale your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">{data.title.toLowerCase()}</span>?
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 mb-10 max-w-2xl mx-auto text-sm md:text-base font-light leading-relaxed">
             Let's schedule a technical discovery call to map out the architecture and timeline for your next major deployment.
           </p>
-          <Link to="/contact" className="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-slate-900 dark:bg-blue-600 text-white font-bold text-sm md:text-base uppercase tracking-wider hover:scale-105 transition-transform shadow-xl">
-            Initiate Project <ArrowRight size={20} />
+          <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 dark:bg-blue-600 text-white font-bold text-xs md:text-sm uppercase tracking-wider hover:scale-105 transition-transform shadow-lg">
+            Initiate Project <ArrowRight size={16} />
           </Link>
         </motion.div>
       </section>
