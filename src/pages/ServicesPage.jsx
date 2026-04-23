@@ -54,24 +54,41 @@ export default function ServicesPage() {
       
       <FloatingTech />
 
-      {/* Hero Section (Scaled Down) */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-slate-200 dark:border-white/5">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.12)_0%,_transparent_60%)] pointer-events-none"></div>
-        <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
-          <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[10px] md:text-xs mb-6 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-500"></span>
-              Solutions Directory
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter leading-[1.05]">
-              Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Capabilities.</span>
-            </h1>
-            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              We bridge the gap between robust software engineering and high-conversion creative design. Explore our operational divisions below.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24 border-b border-slate-200 dark:border-white/5 overflow-hidden">
+  
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://novalaw.vn/wp-content/uploads/2024/07/Software-and-IT-jpg-1.webp" // replace with your image path
+      alt="IT Background"
+      className="w-full h-full object-cover"
+    />
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm"></div>
+  </div>
+
+  {/* Decorative Gradient */}
+  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.12)_0%,_transparent_60%)] pointer-events-none"></div>
+
+  <div className="max-w-6xl mx-auto px-4 relative z-10 text-center">
+    <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-3xl mx-auto">
+      
+      <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[10px] md:text-xs mb-6 shadow-sm">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-500"></span>
+        Solutions Directory
+      </span>
+
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter leading-[1.05]">
+        Platform <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Capabilities.</span>
+      </h1>
+
+      <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
+        We bridge the gap between robust software engineering and high-conversion creative design. Explore our operational divisions below.
+      </p>
+
+    </motion.div>
+  </div>
+</section>
 
       {/* Main Content Areas */}
       <div className="relative z-10 py-16 md:py-24">

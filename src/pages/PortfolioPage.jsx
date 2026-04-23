@@ -50,22 +50,41 @@ export default function PortfolioPage() {
 
       {/* 1. CINEMATIC HERO SECTION */}
       <section className="relative pt-28 pb-12 md:pt-36 md:pb-16 overflow-hidden border-b border-slate-200 dark:border-white/5">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.08)_0%,_transparent_60%)] pointer-events-none"></div>
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
-          <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[10px] md:text-xs mb-5 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-500"></span>
-              Global Portfolio
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-5 tracking-tighter leading-[1.05]">
-              Proven <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Excellence.</span>
-            </h1>
-            <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-2xl mx-auto">
-              A curated collection of scalable web architectures, meticulous brand identities, high-conversion digital creatives, and cinematic films.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+  
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1920&auto=format&fit=crop"
+      alt="Technology background"
+      className="w-full h-full object-cover"
+    />
+    
+    {/* Light gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/40 to-transparent dark:from-slate-900/70 dark:via-slate-900/40 dark:to-transparent"></div>
+  </div>
+
+  {/* Glow effect */}
+  <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.08)_0%,_transparent_60%)] pointer-events-none"></div>
+
+  <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
+    <motion.div initial="hidden" animate="show" variants={fadeUp} className="max-w-3xl mx-auto">
+
+      <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 dark:bg-slate-800/50 backdrop-blur border border-white/40 dark:border-white/10 text-blue-700 dark:text-blue-400 font-extrabold uppercase tracking-[0.25em] text-[10px] md:text-xs mb-5 shadow-sm">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-500"></span>
+        Global Portfolio
+      </span>
+
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-5 tracking-tighter leading-[1.05]">
+        Proven <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">Excellence.</span>
+      </h1>
+
+      <p className="text-base md:text-lg text-slate-700 dark:text-slate-300 font-light leading-relaxed max-w-2xl mx-auto">
+        A curated collection of scalable web architectures, meticulous brand identities, high-conversion digital creatives, and cinematic films.
+      </p>
+
+    </motion.div>
+  </div>
+</section>
 
       {isReady && (
         <div className="relative z-10">

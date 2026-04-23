@@ -6,10 +6,8 @@ import SEO from '../components/SEO';
 export default function ContactPage() {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
-  // Automatically construct the email and open the user's mail client
   const onSubmit = (event) => {
     event.preventDefault();
-    
     const formData = new FormData(event.target);
     const name = formData.get('name');
     const email = formData.get('email');
@@ -24,8 +22,7 @@ export default function ContactPage() {
       `Project Scope & Goals:\n${message}`
     );
 
-    // Redirect to email client
-    window.location.href = `mailto:motionage1@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@motionage.com?subject=${subject}&body=${body}`;
   };
 
   const fadeUp = {
@@ -53,14 +50,13 @@ export default function ContactPage() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-12">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 md:gap-12 mb-16 md:mb-24">
           {/* Contact Details Info */}
           <div className="lg:col-span-2 space-y-5">
             {[
               { icon: <MapPin size={20}/>, title: "Headquarters", desc: "Koteshwor - 32, Kathmandu, Nepal" },
-              { icon: <Phone size={20}/>, title: "Direct Line", desc: "+977 9812340170" },
-              { icon: <Mail size={20}/>, title: "Business Inquiries", desc: "motionage1@gmail.com" },
+              { icon: <Phone size={20}/>, title: "Direct Line", desc: "+977 974-4595767" },
+              { icon: <Mail size={20}/>, title: "Business Inquiries", desc: "info@motionage.com" },
             ].map((item, i) => (
               <motion.div 
                 key={i} 
@@ -114,8 +110,35 @@ export default function ContactPage() {
               </form>
             </div>
           </motion.div>
-
         </div>
+
+        {/* PROFESSIONAL MAP SECTION */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative w-full rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl bg-white dark:bg-[#0c1222] p-2 md:p-3"
+        >
+          <div className="absolute top-6 left-6 z-20 hidden md:block">
+            <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-900 dark:text-white shadow-lg">
+              Visit our Studio
+            </div>
+          </div>
+          
+          <div className="relative w-full h-[350px] md:h-[450px] rounded-[1.5rem] overflow-hidden">
+            {/* Map Iframe with styling */}
+            <iframe 
+              src="https://www.google.com/maps/place/Motion+age/@27.6714301,85.3482273,17z/data=!4m14!1m7!3m6!1s0x4abcd08f73093d5b:0xd1c7468aa91ae070!2sMotion+age!8m2!3d27.6714301!4d85.3508022!16s%2Fg%2F11x2_285xs!3m5!1s0x4abcd08f73093d5b:0xd1c7468aa91ae070!8m2!3d27.6714301!4d85.3508022!16s%2Fg%2F11x2_285xs?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale dark:invert-[0.9] dark:hue-rotate-[180deg] opacity-80 dark:opacity-70 transition-all duration-700 hover:grayscale-0 hover:opacity-100 dark:hover:invert-0"
+            />
+          </div>
+        </motion.div>
       </div>
     </div>
   );

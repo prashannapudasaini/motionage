@@ -46,10 +46,10 @@ export default function Navbar({ isDark, toggleTheme }) {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[10px] font-medium tracking-wide">
           <div className="flex space-x-6">
             <span className="flex items-center gap-1.5">Koteshwor - 32, Kathmandu</span>
-            <span className="flex items-center gap-1.5"><Mail size={12} className="text-blue-600 dark:text-blue-400"/> motionage1@gmail.com</span>
+            <span className="flex items-center gap-1.5"><Mail size={12} className="text-blue-600 dark:text-blue-400"/> info@motionage.com</span>
           </div>
           <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-1.5"><Phone size={12} className="text-blue-600 dark:text-blue-400"/> +977 9812340170</span>
+            <span className="flex items-center gap-1.5"><Phone size={12} className="text-blue-600 dark:text-blue-400"/> +977 974-4595767</span>
           </div>
         </div>
       </div>

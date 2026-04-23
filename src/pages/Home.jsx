@@ -187,32 +187,33 @@ export default function Home() {
       <ClickParticles />
       <Hero />
 
-      {/* 1. TRUST MARQUEE */}
-      <section className="py-6 md:py-8 border-y border-slate-200 dark:border-white/5 bg-slate-100 dark:bg-slate-900 flex overflow-hidden relative select-none">
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-100 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-100 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
-        
-        <motion.div 
-          animate={{ x: ["0%", "-50%"] }} 
-          transition={{ repeat: Infinity, ease: "linear", duration: 25 }} 
-          className="flex whitespace-nowrap gap-12 md:gap-16 items-center px-4 md:px-8 will-change-transform transform-gpu"
-        >
-          {[...Array(2)].map((_, i) => (
-            <React.Fragment key={i}>
-              {clientLogos.map((logo, j) => (
-                <img 
-                  key={j} 
-                  src={logo} 
-                  alt={`Client Logo ${j + 1}`} 
-                  loading="lazy"
-                  decoding="async"
-                  className="h-8 md:h-12 w-auto object-contain opacity-100 contrast-125 dark:brightness-200 pointer-events-none" 
-                />
-              ))}
-            </React.Fragment>
-          ))}
-        </motion.div>
-      </section>
+     {/* 1. TRUST MARQUEE */}
+<section className="py-6 md:py-8 border-y border-slate-200 dark:border-white/5 bg-slate-100 dark:bg-slate-900 flex overflow-hidden relative select-none">
+  <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-100 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+  <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-100 dark:from-slate-900 to-transparent z-10 pointer-events-none"></div>
+  
+  <motion.div 
+    animate={{ x: ["0%", "-50%"] }} 
+    transition={{ repeat: Infinity, ease: "linear", duration: 25 }} 
+    className="flex whitespace-nowrap gap-12 md:gap-16 items-center px-4 md:px-8 will-change-transform transform-gpu"
+  >
+    {[...Array(2)].map((_, i) => (
+      <React.Fragment key={i}>
+        {clientLogos.map((logo, j) => (
+          <img 
+            key={j} 
+            src={logo} 
+            alt={`Client Logo ${j + 1}`} 
+            loading="lazy"
+            decoding="async"
+            className="h-12 md:h-16 w-auto object-contain opacity-100 contrast-150 brightness-110 dark:brightness-200 pointer-events-none" 
+          />
+        ))}
+      </React.Fragment>
+    ))}
+  </motion.div>
+</section>
+
 
       {/* 2. CORPORATE PROFILE */}
       <section className="py-12 md:py-16 bg-white dark:bg-[#0a0f1c] relative z-10 border-b border-slate-200 dark:border-white/5 transition-colors duration-500">
@@ -562,6 +563,110 @@ export default function Home() {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* FINAL CATALYST: CONTACT & MAP SECTION */}
+      <section className="relative py-16 md:py-24 bg-white dark:bg-[#050814] border-t border-slate-200 dark:border-white/5 transition-colors duration-500 overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 dark:bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <motion.div 
+            initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} variants={fadeUp}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 text-blue-700 dark:text-blue-400 text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Direct Connection
+            </div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter leading-[1.05]">
+              Let's Architect Your <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500">Digital Dominance.</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-12 items-start">
+            
+            {/* 1. MAP PANEL (Left Side) */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+              className="lg:col-span-5 h-full min-h-[400px]"
+            >
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl bg-white dark:bg-[#0c1222] p-2">
+                <div className="absolute top-6 left-6 z-20 hidden md:block">
+                  <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-[10px] font-bold text-slate-900 dark:text-white shadow-lg uppercase tracking-widest">
+                    Studio Location
+                  </div>
+                </div>
+                <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden min-h-[380px]">
+                   <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.75841673892!2d85.3411!3d27.6789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKoteshwor%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale dark:invert-[0.9] dark:hue-rotate-[180deg] opacity-80 dark:opacity-70 transition-all duration-700 hover:grayscale-0 hover:opacity-100 dark:hover:invert-0"
+            />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* 2. CONTACT FORM (Right Side) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
+              className="lg:col-span-7"
+            >
+              <div className="bg-white dark:bg-[#0c1222] p-8 md:p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800/80 shadow-2xl relative overflow-hidden">
+                <form 
+                  onSubmit={(e) => {
+                    e.preventDefault();
+                    const formData = new FormData(e.target);
+                    const name = formData.get('name');
+                    const subject = encodeURIComponent(`Homepage Inquiry: ${name}`);
+                    const body = encodeURIComponent(`Name: ${name}\nEmail: ${formData.get('email')}\nBudget: ${formData.get('budget')}\n\nProject:\n${formData.get('message')}`);
+                    window.location.href = `mailto:motionage1@gmail.com?subject=${subject}&body=${body}`;
+                  }} 
+                  className="space-y-5"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 ml-1">Name</label>
+                      <input type="text" name="name" required className="w-full bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white px-4 py-3 rounded-xl focus:border-blue-500 outline-none transition text-sm" placeholder="Your name" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 ml-1">Email</label>
+                      <input type="email" name="email" required className="w-full bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white px-4 py-3 rounded-xl focus:border-blue-500 outline-none transition text-sm" placeholder="work@company.com" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 ml-1">Service Required</label>
+                    <select name="budget" required className="w-full bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white px-4 py-3 rounded-xl focus:border-blue-500 outline-none transition appearance-none text-sm">
+                      <option value="">Select Service...</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="App Development">App Development</option>
+                      <option value="Branding & Design">Branding & Design</option>
+                      <option value="Marketing & Ads">Marketing & Ads</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 ml-1">Message</label>
+                    <textarea name="message" required rows="3" className="w-full bg-slate-50 dark:bg-[#050814] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white px-4 py-3 rounded-xl focus:border-blue-500 outline-none transition resize-none text-sm" placeholder="Tell us about your project..."></textarea>
+                  </div>
+                  <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition shadow-lg hover:-translate-y-0.5">
+                    Launch Consultation Client <ArrowRight size={16} />
+                  </button>
+                </form>
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
